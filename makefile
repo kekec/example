@@ -1,8 +1,9 @@
 CC=g++
 CFLAGS= -g
 
-test2.o: test2.cpp
-	$(CC) $(CFLAGS) -c test2.cpp
+test: test.o motor.o sensor.o latch.o
+	$(CC) $(CFLAGS) -o test motor.o sensor.o latch.o test.o
+
 test.o: test.cpp
 	$(CC) $(CFLAGS) -c test.cpp
 motor.o: motor.cpp
@@ -12,12 +13,7 @@ sensor.o: sensor.cpp
 latch.o: latch.cpp
 	$(CC) $(CFLAGS) -c latch.cpp
 
-
-fin: test.o motor.o sensor.o latch.o
-	$(CC) $(CFLAGS) -o fin motor.o sensor.o latch.o test.o
-
-fin2: test2.o motor.o sensor.o latch.o
-	$(CC) $(CFLAGS) -o fin2 motor.o sensor.o latch.o test2.o
-
+run: test
+	./test
 clean:
-	rm -f fin fin2 *.o
+	rm -f test *.o

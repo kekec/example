@@ -1,3 +1,6 @@
+#define DS_OPEN 1
+#define DS_CLOSED 0
+
 class CMotor;
 class CSensor;
 

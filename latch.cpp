@@ -3,8 +3,6 @@
 #include "sensor.h"
 #include "motor.h"
 #include "string.h"
-#define DS_OPEN 1
-#define DS_CLOSED 0
 
 CLatch::CLatch(CMotor * motor, CSensor * sensor, int * buffer)
 {
