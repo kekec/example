@@ -1,3 +1,8 @@
+# makefile
+# Paul Wiegele 2014
+# wiegele.paul@gmail.com
+
+
 CC=g++
 CFLAGS= -g
 
@@ -12,8 +17,14 @@ sensor.o: sensor.cpp
 	$(CC) $(CFLAGS) -c sensor.cpp
 latch.o: latch.cpp
 	$(CC) $(CFLAGS) -c latch.cpp
-
+all:
 run: test
 	./test
+
+valgrind: test
+	valgrind --leak-check=full -v test
+
+debug: test
+	gdb test
 clean:
 	rm -f test *.o

@@ -1,3 +1,7 @@
+// latch.cpp
+// Paul Wiegele 2014
+// wiegele.paul@gmail.com
+
 #include "latch.h"
 #include "assert.h"
 #include "sensor.h"

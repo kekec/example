@@ -1,3 +1,7 @@
+// motor.cpp
+// Paul Wiegele 2014
+// wiegele.paul@gmail.com
+
 #include "motor.h"
 #include <iostream>
 

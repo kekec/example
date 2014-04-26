@@ -1,3 +1,7 @@
+// sensor.cpp
+// Paul Wiegele 2014
+// wiegele.paul@gmail.com
+
 #include "sensor.h"
 #include <iostream>
 #include <string.h>

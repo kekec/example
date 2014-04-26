@@ -1,3 +1,7 @@
+// latch.h
+// Paul Wiegele 2014
+// wiegele.paul@gmail.com
+
 #define DS_OPEN 1
 #define DS_CLOSED 0
 

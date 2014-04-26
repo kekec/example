@@ -1,3 +1,7 @@
+// test.cpp
+// Paul Wiegele 2014
+// wiegele.paul@gmail.com
+
 #include <iostream>
 #include "motor.h"
 #include "assert.h"
@@ -41,10 +45,11 @@ main()
         avg=((float)sum)/((float)cnt);
         cnt=0;
         state=ST_SEEK_POS;
+        std::cout << "ST_CAL:Avg is " << avg << std::endl;
       break;
 
       case ST_SEEK_POS:
-        if(cnt == MAX_SENSOR_DATA) //since avg value is not in array
+        if(cnt == MAX_SENSOR_DATA) //we looped over all values in sensors array
         {
           state=ST_SEEK_MIN_DIST;
           cnt=0;
@@ -54,14 +59,14 @@ main()
         latch.moveMotor(cnt++);
         if(((float)latch.getData()) == avg)
         { 
-          std::cout << "avg found " << cnt << std::endl;
+          std::cout << "ST_SEEK_POS: Avg found, setting motor to " << cnt-1 << std::endl;
           latch.setLatchState(DS_OPEN);
           return EXIT_SUCCESS;
         }
       break;
 
       case ST_SEEK_MIN_DIST:
-        if(cnt == MAX_SENSOR_DATA) //since avg value is not in array
+        if(cnt == MAX_SENSOR_DATA) //we looped over all values in sensors array
         {
           state=ST_SET_MOTOR;
           break;
@@ -77,6 +82,7 @@ main()
       break;
 
       case ST_SET_MOTOR:
+          std::cout << "ST_SET_MOTOR: Avg found, setting motor to " << min_pos << std::endl;
           latch.moveMotor(min_pos);
           latch.setLatchState(DS_OPEN);
           return EXIT_SUCCESS;

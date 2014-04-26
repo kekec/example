@@ -1,3 +1,7 @@
+// motor.h
+// Paul Wiegele 2014
+// wiegele.paul@gmail.com
+
 class CMotor
 {
 
