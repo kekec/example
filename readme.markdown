@@ -4,17 +4,17 @@ Paul Wiegele 2014
 wiegele.paul@gmail.com
 --> 
 
-#cntent
+#content
 
-  |-- latch.cpp        implementation of latch
-  |-- latch.h          header of latch
-  |-- makefile         builds, run, checks and debugs 
-  |-- motor.cpp        implementation of motor
-  |-- motor.h          header of motor
-  |-- readme.markdown  holds the documentation
-  |-- sensor.cpp       implementation of sensor
-  |-- sensor.h         header of sensor
-  |-- test.cpp         instantiates all objects and implements FSM
+  * latch.cpp        implementation of latch
+  * latch.h          header of latch
+  * makefile         builds, run, checks and debugs 
+  * motor.cpp        implementation of motor
+  * motor.h          header of motor
+  * readme.markdown  holds the documentation
+  * sensor.cpp       implementation of sensor
+  * sensor.h         header of sensor
+  * test.cpp         instantiates all objects and implements FSM
 
 #implementation
   The latch class consists of the motor and the sensor. Opon calling
